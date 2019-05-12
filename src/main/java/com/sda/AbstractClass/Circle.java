@@ -3,19 +3,23 @@ package com.sda.AbstractClass;
 
 public class Circle extends AShape {
 
+    private static final double PI = 3.14;
+    // math.PI   -> este definita in java
+    private double radius;
 
-    @Override
-    public void getArea() {
-        System.out.println("The area of circle is");
+    public double getRadius() {
+        return radius;
     }
 
-    @Override
-    public void getPerimeter() {
-        System.out.println("The perimeter of circle is");
-
+    public Circle(double radius) {
+        this.radius = radius;
     }
 
-    final static double PI = 3.14;
+    public double getArea() {
+        return PI * radius * radius;
+    }
 
-
+    public double getPerimeter() {
+        return 2 * PI * radius;
+    }
 }

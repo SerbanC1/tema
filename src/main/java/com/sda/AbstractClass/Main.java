@@ -4,19 +4,24 @@ import static sun.misc.Version.print;
 
 public class Main {
 
-    public static void main(String[] args) {
-        AShape Circle = new Circle();
-        AShape Rectangle = new Rectangle();
-        AShape Square = new Square();
+    private static void printShape(AShape shape) {
+        String message = String.format(
+                "%s recived has perimeter: %.2f and area : %.2f" ,
+                shape.getClass().getSimpleName(),
+                shape.getPerimeter(),
+                shape.getArea());
 
-        print(Circle);
-        print(Rectangle);
-        print(Square);
-
+        System.out.println(message);
     }
 
-    private static void print(AShape aShape) {
-        aShape.getArea();
-        aShape.getPerimeter();
+    public static void main(String[] args) {
+        AShape circle = new Circle(2);
+        AShape square = new Square(3);
+        AShape rectangle = new Rectangle(4, 2);
+
+        printShape(circle);
+        printShape(square);
+        printShape(rectangle);
     }
 }
+
